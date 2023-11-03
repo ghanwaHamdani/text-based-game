@@ -4,167 +4,180 @@ public class Room {
 	private boolean southExit;
 	private boolean eastExit;
 	private boolean westExit;
-	//blank space
-	String space = ("                             ");
-	
-	//walls
-	String nWall = (" ---------------------------- ");
-	String sWall = (""
-					+ ""
-					+ ""
-					+ ""
-					+ ""
-					+ ""
-					+ ""
-					+ ""
-					+ ""
-					+ ""
-					+ ""
-					+ " ---------------------------- ");
-	String eWall = (space + "|" + System.lineSeparator() +
-					space + "|" + System.lineSeparator() +
-					space + "|" + System.lineSeparator() +
-					space + "|" + System.lineSeparator() +
-					space + "|" + System.lineSeparator() +
-					space + "|" + System.lineSeparator() +
-					space + "|" + System.lineSeparator() +
-					space + "|" + System.lineSeparator() +
-					space + "|" + System.lineSeparator() +
-					space + "|" + System.lineSeparator() +
-					space + "|" + System.lineSeparator() +
-					space + "|" );
-	String wWall = ("|" + System.lineSeparator() +
-					"|" + System.lineSeparator() +
-					"|" + System.lineSeparator() +
-					"|" + System.lineSeparator() +
-					"|" + System.lineSeparator() +
-					"|" + System.lineSeparator() +
-					"|" + System.lineSeparator() +
-					"|" + System.lineSeparator() +
-					"|" + System.lineSeparator() +
-					"|" + System.lineSeparator() +
-					"|" + System.lineSeparator() +
-					"|" );
-	//exits
-	String nDoor = (" -----------      ----------- ");
-	String sDoor = (""
-				  + ""
-				  + ""
-				  + ""
-				  + ""
-				  + ""
-				  + ""
-				  + ""
-				  + ""
-				  + ""
-				  + ""
-				  + " -----------      -----------  ");
-	String eDoor = ("|                            |" + System.lineSeparator() +
-					"|                            |" + System.lineSeparator() +
-					"|                            |" + System.lineSeparator() +
-					"|                            |" + System.lineSeparator() +
-					"|                            |" + System.lineSeparator() +
-					"|                             " + System.lineSeparator() +
-					"|                             " + System.lineSeparator() +
-					"|                            |" + System.lineSeparator() +
-					"|                            |" + System.lineSeparator() +
-					"|                            |" + System.lineSeparator() +
-					"|                            |" + System.lineSeparator() +
-					"|                            |" );
-	String wDoor = ("|                            |" + System.lineSeparator() +
-					"|                            |" + System.lineSeparator() +
-					"|                            |" + System.lineSeparator() +
-					"|                            |" + System.lineSeparator() +
-					"|                            |" + System.lineSeparator() +
-					"                             |" + System.lineSeparator() +
-					"                             |" + System.lineSeparator() +
-					"|                            |" + System.lineSeparator() +
-					"|                            |" + System.lineSeparator() +
-					"|                            |" + System.lineSeparator() +
-					"|                            |" + System.lineSeparator() +
-					"|                            |" );
 
-	Room(boolean n, boolean s, boolean e, boolean w){
+	//Constructor
+	public Room(boolean n, boolean s, boolean e, boolean w){
 		this.northExit = n;
 		this.southExit = s;
 		this.eastExit = e;
 		this.westExit = w;
 	}
-	
+
+
 	public void drawRoom(){
-		if(northExit == true) {
-			System.out.println(nDoor);
-		} else if(northExit == false) {
-			System.out.println(nWall);
-		}
-		
-		if(westExit == true) {
-			System.out.println(wDoor);
-		} else if(westExit == false) {
-			System.out.println(wWall);
-		}
-		
-		if(eastExit == true) {
-			System.out.println(eDoor);
-		} else if(eastExit == false) {
-			System.out.println(eWall);
-		}
-		
-		if(southExit == true) {
-			System.out.println(sDoor);
-		} else if(southExit == false) {
-			System.out.println(sWall);
-		}
-		
-		
-		/*
-		
-		if(northExit == true) {
-			System.out.println(nDoor);
-			System.out.println("|                            |");
-			System.out.println("|                            |");
-			System.out.println("|                            |");
-			System.out.println("|                            |");
-			System.out.println("|                            |");
-			System.out.println("|                            |");
-			System.out.println("|                            |");
-			System.out.println("|                            |");
-			System.out.println("|                            |");
-			System.out.println("|                            |");
-			System.out.println("|                            |");
-			System.out.println("|                            |");
-			System.out.println(" ---------------------------- ");
+		//FOUR EXITS
+		if(northExit == true && southExit == true && eastExit == true && westExit == true) {
+			System.out.println("xxxxx    xxxxx\r\n"
+					 + "xxxxx    xxxxx\r\n"
+					 + "              \r\n"
+					 + "              \r\n"
+					 + "xxxxx    xxxxx\r\n"
+					 + "xxxxx    xxxxx\n");
 			
 		}
 		
-		if(southExit == true) {
-			System.out.println(" ---------------------------- ");
-			System.out.println("|                            |");
-			System.out.println("|                            |");
-			System.out.println("|                            |");
-			System.out.println("|                            |");
-			System.out.println("|                            |");
-			System.out.println("|                            |");
-			System.out.println("|                            |");
-			System.out.println("|                            |");
-			System.out.println("|                            |");
-			System.out.println("|                            |");
-			System.out.println("|                            |");
-			System.out.println("|                            |");
-			System.out.println(sDoor);
+		
+		//THREE EXITS
+		if(northExit == false && southExit == true && eastExit == true && westExit == true) {
+			System.out.println("xxxxxxxxxxxxxx\r\n"
+					 + "xxxxxxxxxxxxxx\r\n"
+					 + "              \r\n"
+					 + "              \r\n"
+					 + "xxxxx    xxxxx\r\n"
+					 + "xxxxx    xxxxx\n");
+			
 		}
 		
-		if(eastExit == true) {
-			System.out.println(" ---------------------------- ");
-			System.out.println(eDoor);
-			System.out.println(" ---------------------------- ");
+		if(northExit == true && southExit == false && eastExit == true && westExit == true) {
+			System.out.println("xxxxx    xxxxx\r\n"
+					 + "xxxxx    xxxxx\r\n"
+					 + "              \r\n"
+					 + "              \r\n"
+					 + "xxxxxxxxxxxxxx\r\n"
+					 + "xxxxxxxxxxxxxx\n");
+			
 		}
-		if(westExit == true) {
-			System.out.println(" ---------------------------- ");
-			System.out.println(wDoor);
-			System.out.println(" ---------------------------- ");
+		
+		if(northExit == true && southExit == true && eastExit == false && westExit == true) {
+			System.out.println("xxxxx    xxxxx\r\n"
+					 + "xxxxx    xxxxx\r\n"
+					 + "         xxxxx\r\n"
+					 + "         xxxxx\r\n"
+					 + "xxxxx    xxxxx\r\n"
+					 + "xxxxx    xxxxx\n");
 		}
-	}*/
-	
+		
+		if(northExit == true && southExit == true && eastExit == true && westExit == false) {
+			System.out.println("xxxxx    xxxxx\r\n"
+					 + "xxxxx    xxxxx\r\n"
+					 + "xxxxx         \r\n"
+					 + "xxxxx         \r\n"
+					 + "xxxxx    xxxxx\r\n"
+					 + "xxxxx    xxxxx\n");
+			
+		}
+		
+		//TWO EXITS
+		if(northExit == false && southExit == false && eastExit == true && westExit == true) {
+			System.out.println("xxxxxxxxxxxxxx\r\n"
+					 + "xxxxxxxxxxxxxx\r\n"
+					 + "              \r\n"
+					 + "              \r\n"
+					 + "xxxxxxxxxxxxxx\r\n"
+					 + "xxxxxxxxxxxxxx\n");
+			
+		}
+		
+		if(northExit == false && southExit == true && eastExit == false && westExit == true) {
+			System.out.println("xxxxxxxxxxxxxx\r\n"
+					 + "xxxxxxxxxxxxxx\r\n"
+					 + "         xxxxx\r\n"
+					 + "         xxxxx\r\n"
+					 + "xxxxx    xxxxx\r\n"
+					 + "xxxxx    xxxxx\n");
+			
+		}
+		
+		if(northExit == false && southExit == true && eastExit == true && westExit == false) {
+			System.out.println("xxxxxxxxxxxxxx\r\n"
+					 + "xxxxxxxxxxxxxx\r\n"
+					 + "xxxxx         \r\n"
+					 + "xxxxx         \r\n"
+					 + "xxxxx    xxxxx\r\n"
+					 + "xxxxx    xxxxx\n");
+			
+		}
+		
+		if(northExit == true && southExit == false && eastExit == false && westExit == true) {
+			System.out.println("xxxxx    xxxxx\r\n"
+					 + "xxxxx    xxxxx\r\n"
+					 + "         xxxxx\r\n"
+					 + "         xxxxx\r\n"
+					+ "xxxxxxxxxxxxxx\r\n"
+					+ "xxxxxxxxxxxxxx\n");
+			
+		}
+		
+		if(northExit == true && southExit == false && eastExit == true && westExit == false) {
+			System.out.println("xxxxx    xxxxx\r\n"
+					 + "xxxxx    xxxxx\r\n"
+					 + "xxxxx         \r\n"
+					 + "xxxxx         \r\n"
+					 + "xxxxxxxxxxxxxx\r\n"
+					 + "xxxxxxxxxxxxxx\n");
+			
+		}
+		
+		if(northExit == true && southExit == true && eastExit == false && westExit == false) {
+			System.out.println("xxxxx    xxxxx\r\n"
+					 + "xxxxx    xxxxx\r\n"
+					 + "xxxxx    xxxxx\r\n"
+					 + "xxxxx    xxxxx\r\n"
+					 + "xxxxx    xxxxx\r\n"
+					 + "xxxxx    xxxxx\n");
+			
+		}
+		
+		//ONE EXIT
+		if(northExit == true && southExit == false && eastExit == false && westExit == false) {
+			System.out.println("xxxxx    xxxxx\r\n"
+					 + "xxxxx    xxxxx\r\n"
+					 + "xxxxx    xxxxx\r\n"
+					 + "xxxxx    xxxxx\r\n"
+					 + "xxxxxxxxxxxxxx\r\n"
+					 + "xxxxxxxxxxxxxx\n");
+			
+		}
+		
+		if(northExit == false && southExit == true && eastExit == false && westExit == false) {
+			System.out.println("xxxxxxxxxxxxxx\r\n"
+					 + "xxxxxxxxxxxxxx\r\n"
+					 + "xxxxx    xxxxx\r\n"
+					 + "xxxxx    xxxxx\r\n"
+					 + "xxxxx    xxxxx\r\n"
+					 + "xxxxx    xxxxx\n");
+			
+		}
+		
+		if(northExit == false && southExit == false && eastExit == true && westExit == false) {
+			System.out.println("xxxxxxxxxxxxxx\r\n"
+					 + "xxxxxxxxxxxxxx\r\n"
+					 + "xxxxx         \r\n"
+					 + "xxxxx         \r\n"
+					 + "xxxxxxxxxxxxxx\r\n"
+					 + "xxxxxxxxxxxxxx\n");
+			
+		}
+		
+		if(northExit == false && southExit == false && eastExit == false && westExit == true) {
+			System.out.println("xxxxxxxxxxxxxx\r\n"
+					 + "xxxxxxxxxxxxxx\r\n"
+					 + "         xxxxx\r\n"
+				         + "         xxxxx\r\n"
+					 + "xxxxxxxxxxxxxx\r\n"
+					 + "xxxxxxxxxxxxxx\n");
+			
+		}
+		
+		//ZERO EXITS 
+		if(northExit == false && southExit == false && eastExit == false && westExit == false) {
+			System.out.println("xxxxxxxxxxxxxx\r\n"
+					 + "xxxxxxxxxxxxxx\r\n"
+					 + "xxxxx    xxxxx\r\n"
+					 + "xxxxx    xxxxx\r\n"
+					 + "xxxxxxxxxxxxxx\r\n"
+					 + "xxxxxxxxxxxxxx\n");
+			
+		}
 	}
 }
