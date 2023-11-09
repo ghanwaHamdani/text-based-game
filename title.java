@@ -1,6 +1,5 @@
-
+//title class
 public class Title {
-	public class Title {
 		final static String ANSI_BLACK = "\u001B[0m";
 	    final static String ANSI_YELLOW = "\u001B[33m";
 	    final static String ANSI_CYAN = "\u001B[36m";
@@ -23,5 +22,5 @@ public class Title {
 				System.out.println(ANSI_BLACK + "=================================== PRESS 'SPACEBAR' TO START ====================================");
 			
 		}
-	}
 }
+
